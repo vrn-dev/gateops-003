@@ -34,7 +34,7 @@ EntryLoop.watch((err, value) => {
         entryActive = false;
     }
     console.log('Entry Loop End entryActive:', entryActive);
-    entryActive = false;
+    // entryActive = false;
     console.log('Entry Loop forced entryActive:', entryActive)
 });
 
