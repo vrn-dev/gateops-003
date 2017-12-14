@@ -1,0 +1,23 @@
+{
+  "name": "gateops-003",
+  "version": "0.0.3",
+  "description": "Gateops for BayTrans",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vrn-dev/gateops-003.git"
+  },
+  "author": "Vaisakh Nair",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vrn-dev/gateops-003/issues"
+  },
+  "homepage": "https://github.com/vrn-dev/gateops-003#readme",
+  "dependencies": {
+    "node-custom-pos": "file:../../node-escpos/node-custom-pos-0.0.1.tgz",
+    "onoff": "^1.1.8"
+  }
+}
