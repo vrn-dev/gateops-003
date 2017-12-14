@@ -14,6 +14,9 @@ const utils = require('./utils');
 let entryActive = false;
 let exitLoopActive = false;
 
+console.log('Ticket Printer Module Acitve. Waiting for inputs....');
+
+
 EntryLoop.watch((err, value) => {
     if ( err )
         throw new Error(err);
@@ -26,7 +29,7 @@ EntryLoop.watch((err, value) => {
 });
 
 TicketButton.watch((err, value) => {
-    printTicket()
+    printTicket();
 });
 
 ExitLoop.watch((err, value) => {
@@ -34,7 +37,7 @@ ExitLoop.watch((err, value) => {
         throw new Error(err);
     if ( value === 1 ) {
         exitLoopActive = true;
-        console.log('SENDING TO DB!!')
+        console.log('SENDING TO DB!!');
 
         // TODO Send to DB
     }
@@ -77,3 +80,10 @@ function printTicket() {
             .close();
     });
 }
+
+process.on('SIGINT', function () {
+    EntryLoop.unexport();
+    ExitLoop.unexport();
+    TicketButton.unexport();
+    ButtonLED.unexport();
+});
