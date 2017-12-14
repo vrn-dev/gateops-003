@@ -6,7 +6,7 @@ const Gpio = require('onoff').Gpio;
 
 const EntryLoop = new Gpio(2, 'in', 'both');
 const TicketButton = new Gpio(3, 'in', 'falling');
-const ButtonLED = new Gpio(3, 'out');
+// const ButtonLED = new Gpio(3, 'out');
 const ExitLoop = new Gpio(4, 'in', 'both');
 
 const utils = require('./utils');
@@ -27,7 +27,7 @@ EntryLoop.watch((err, value) => {
         console.log('Entry Loop === HIGH');
 
         entryActive = true;
-        enableButtonLED(value)
+        // enableButtonLED(value)
     } else if ( value === 1 ) {
         console.log('Entry Loop === LOW');
 
@@ -57,9 +57,9 @@ ExitLoop.watch((err, value) => {
     }
 });
 
-function enableButtonLED(value) {
-    ButtonLED.writeSync(value)
-}
+// function enableButtonLED(value) {
+//     ButtonLED.writeSync(value)
+// }
 
 function printTicket() {
     device.open((err) => {
