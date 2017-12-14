@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/vrn-dev/gateops-003#readme",
   "dependencies": {
-    "node-custom-pos": "file:///home/pi/node-projects/node-custom-pos",
+    "node-custom-pos": "file:///home/pi/node-projects/node-custom-pos/node-custom-pos-0.0.1.tgz",
     "onoff": "^1.1.8"
   }
 }
