@@ -4,10 +4,10 @@ const printer = new pos.Printer(device);
 
 const Gpio = require('onoff').Gpio;
 
-const EntryLoop = new Gpio(1, 'in', 'both');
-const TicketButton = new Gpio(2, 'in', 'falling');
+const EntryLoop = new Gpio(17, 'in', 'both');
+const TicketButton = new Gpio(27, 'in', 'falling');
 const ButtonLED = new Gpio(3, 'out');
-const ExitLoop = new Gpio(4, 'in', 'both');
+const ExitLoop = new Gpio(22, 'in', 'both');
 
 const utils = require('./utils');
 
