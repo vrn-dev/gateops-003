@@ -4,7 +4,7 @@ const printer = new pos.Printer(device);
 
 const Gpio = require('onoff').Gpio;
 
-const EntryLoop = new Gpio(1, 'in', 'both');
+const EntryLoop = new Gpio(14, 'in', 'both');
 const TicketButton = new Gpio(2, 'in', 'rising');
 const ButtonLED = new Gpio(3, 'out');
 const ExitLoop = new Gpio(4, 'in', 'both');
@@ -18,6 +18,8 @@ console.log('Ticket Printer Module Acitve. Waiting for inputs....');
 
 
 EntryLoop.watch((err, value) => {
+    console.log('Entry loop value', value);
+
     if ( err )
         throw new Error(err);
     if ( value === 1 ) {
@@ -29,10 +31,13 @@ EntryLoop.watch((err, value) => {
 });
 
 TicketButton.watch((err, value) => {
+    console.log('Button Pressed');
+
     printTicket();
 });
 
 ExitLoop.watch((err, value) => {
+    console.log('Exit loop value', value);
     if ( err )
         throw new Error(err);
     if ( value === 1 ) {
