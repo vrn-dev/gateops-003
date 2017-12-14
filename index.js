@@ -41,8 +41,8 @@ EntryLoop.watch((err, value) => {
 TicketButton.watch((err, value) => {
     console.log('Button Pressed');
     console.log('entryActive = ', entryActive);
-
-    printTicket();
+    if ( value === 0 && entryActive )
+        printTicket();
 });
 
 ExitLoop.watch((err, value) => {
