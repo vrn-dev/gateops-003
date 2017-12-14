@@ -23,15 +23,20 @@ EntryLoop.watch((err, value) => {
     if ( err )
         throw new Error(err);
     if ( value === 1 ) {
+        console.log('Entry Loop === HIGH');
+
         entryActive = true;
         enableButtonLED(value)
     } else if ( value === 0 ) {
+        console.log('Entry Loop === LOW');
+
         entryActive = false;
     }
 });
 
 TicketButton.watch((err, value) => {
     console.log('Button Pressed');
+    console.log('entryActive = ', entryActive);
 
     printTicket();
 });
